@@ -28,6 +28,10 @@ TaskManager is a robust backend application built using **Spring Boot**, designe
 - Maven
 
 ---
+
+## 🧱 Project Structure
+
+
 src/
 └── main/
 ├── java/com/taskmanager/
@@ -148,7 +152,3 @@ This project is open-source and available for educational and demonstration purp
 Email: [tiwarishruti0001@gmail.com](mailto:tiwarishruti0001@gmail.com)
 
 ---
-
-
-## 🧱 Project Structure
-
