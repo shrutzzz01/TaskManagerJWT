@@ -66,13 +66,13 @@ src/
 │ ├── security/
 │ │ ├── JwtUtil.java
 │ │ ├── JwtFilter.java
-│ │ └── UserDetailsServiceImpl.java
 │ ├── service/
 │ │ ├── AuthService.java
 │ │ ├── UserService.java
 │ │ ├── TaskService.java
 │ │ ├── TaskTypeService.java
-│ │ └── UserDetailsImpl.java
+│ │ ├── UserDetailsImpl.java
+| | └── UserDetailsServiceImpl.java
 │ └── TaskManager.java
 └── resources/
 └── application.properties
@@ -82,7 +82,7 @@ src/
 
 ## 🔐 Authentication Flow
 
-- `POST /api/auth/login` – Accepts `{ username, password }`, returns JWT token.
+- `POST /api/auth/login` – Accepts `{ usernameOrEmail, password }`, returns JWT token.
 - JWT is passed in the `Authorization` header as:  
   `Authorization: Bearer <token>`
 
@@ -96,14 +96,23 @@ Protected endpoints require valid token. Spring Security filters requests via `J
 
 ## 📬 Sample API Endpoints
 
-| Function             | Method | Endpoint                  |
-|----------------------|--------|---------------------------|
-| Register/Login       | POST   | `/api/auth/login`         |
-| Get All Users        | GET    | `/api/users`              |
-| Create Task          | POST   | `/api/tasks`              |
-| Get Tasks by User    | GET    | `/api/tasks/user/{id}`    |
-| Create Task Type     | POST   | `/api/task-types`         |
-| Get All Task Types   | GET    | `/api/task-types`         |
+  | Function                 | Method | Endpoint                  |
+  |--------------------------|--------|---------------------------|
+  | Register User            | POST   | `/auth/register`          |
+  | Login User               | POST   | `/auth/login`             |
+  | Update User Details      | PUT    | `/api/users`              |
+  | Delete User Account      | DELETE | `/api/users`              |
+  | Get All Tasks            | GET    | `/api/tasks`              |
+  | Update Task              | PUT    | `/api/tasks`              |
+  | Create Task              | POST   | `/api/tasks`              |
+  | Delete Task by Title     | DELETE | `/api/tasks`              |
+  | Update Task Status       | PATCH  | `/api/tasks/status`       |
+  | Get Task by Title        | GET    | `/api/tasks/{title}`      |
+  | Get Tasks by Task Type   | GET    | `/api/tasks/taskType`     |
+  | Get Tasks by Status      | GET    | `/api/tasks/status`       |
+  | Get All Task Types       | GET    | `/api/taskTypes`          |
+  | Edit Task Type by Title  | PATCH  | `/api/taskTypes`          |
+
 
 > (Note: Postman Collection can be added to your repo if needed.)
 
