@@ -31,7 +31,7 @@ TaskManager is a robust backend application built using **Spring Boot**, designe
 
 ## 🧱 Project Structure
 
-
+```bash
 src/
 └── main/
 ├── java/com/taskmanager/
