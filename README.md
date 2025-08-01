@@ -78,6 +78,7 @@ src/
 └── application.properties
 
 ---
+```
 
 ## 🔐 Authentication Flow
 
